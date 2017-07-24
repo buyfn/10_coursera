@@ -18,44 +18,49 @@ def get_soup(url):
     return soup
 
 
+def get_title(course_soup):
+    title = course_soup.find('h1', attrs={'class': 'title'})
+    if title:
+        return title.text
+    else:
+        return 'no title found'
+
+
+def get_lang(course_soup):
+    language = course_soup.find('div', attrs={'class': 'rc-Language'})
+    if language:
+        primary_lang = next(language.stripped_strings)
+        return primary_lang
+    else:
+        return 'no language found'
+
+
+def get_start_date(course_soup):
+    start_date = course_soup.find('div', attrs={'class': 'startdate'})
+    if start_date:
+        return start_date.text
+    else:
+        return 'no start date found'
+
+
+def get_duration(course_soup):
+    duration = course_soup.find('div', attrs={'class': 'rc-WeekView'})
+    if duration:
+        weeks = sum(1 for _ in duration.children)
+        return weeks
+    else:
+        return 'no duration found'
+
+
+def get_rating(course_soup):
+    rating = course_soup.find('div', attrs={'class': 'ratings-text'})
+    if rating:
+        return rating.text
+    else:
+        return 'no rating found'
+
+
 def get_course_info(course_slug):
-    def get_title(course_soup):
-        title = course_soup.find('h1', attrs={'class': 'title'})
-        if title:
-            return title.text
-        else:
-            return 'no title found'
-
-    def get_lang(course_soup):
-        language = course_soup.find('div', attrs={'class': 'rc-Language'})
-        if language:
-            primary_lang = next(language.stripped_strings)
-            return primary_lang
-        else:
-            return 'no language found'
-    
-    def get_start_date(course_soup):
-        start_date = course_soup.find('div', attrs={'class': 'startdate'})
-        if start_date:
-            return start_date.text
-        else:
-            return 'no start date found'
-
-    def get_duration(course_soup):
-        duration = course_soup.find('div', attrs={'class': 'rc-WeekView'})
-        if duration:
-            weeks = sum(1 for _ in duration.children)
-            return weeks
-        else:
-            return 'no duration found'
-    
-    def get_rating(course_soup):
-        rating = course_soup.find('div', attrs={'class': 'ratings-text'})
-        if rating:
-            return rating.text
-        else:
-            return 'no rating found'
-
     soup = get_soup(course_slug)
     return (get_title(soup),
             get_lang(soup),
