@@ -1,6 +1,6 @@
 # Coursera Dump
 
-Script loads 20 pages from [coursera xml feed](https://www.coursera.org/sitemap~www~courses.xml). Parses them for course info and saves it into courses.xlsx file.
+Script loads 20 pages from [coursera xml feed](https://www.coursera.org/sitemap~www~courses.xml). Parses them for course info and saves it into `courses.xlsx` file.
 
 ## Usage
 Run this:
