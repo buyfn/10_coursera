@@ -8,7 +8,7 @@ Run this:
 python coursera.py
 ```
 
-![Output example](/10_coursera/output.png)
+![Output example](output.png)
 
 # Project Goals
 
