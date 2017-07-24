@@ -8,6 +8,8 @@ Run this:
 python coursera.py
 ```
 
+![Output example](/10_coursera/output.png)
+
 # Project Goals
 
 The code is written for educational purposes. Training course for web-developers - [DEVMAN.org](https://devman.org)
