@@ -77,10 +77,10 @@ def output_courses_info_to_xlsx(course_list, filepath='courses.xlsx'):
                'Nearest start date',
                'Duration, weeks',
                'Rating'])
-    
+
     for course in course_list:
         ws.append(course)
-        
+
     wb.save(filepath)
 
 
