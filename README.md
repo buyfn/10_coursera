@@ -8,6 +8,7 @@ Run this:
 python coursera.py
 ```
 
+Get this:
 ![Output example](output.png)
 
 # Project Goals
